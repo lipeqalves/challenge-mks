@@ -11,7 +11,7 @@ Foi desenvolvido um site simulando a pagina de compras de uma loja, onde é posi
 
 A API utilizada encontra-se hospedada no heroku: [API](https://mks-challenge-api-frontend.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC)
 
-Site desenvolvido encontra-se hospedado na plataforma vercel: [MKS sistemas - site]()
+Site desenvolvido encontra-se hospedado na plataforma vercel: [MKS sistemas - site](https://challege-mks.vercel.app/)
 
 <h3>Tecnologias Utilizadas</h3>
 <div style ="display: inline_block"><br>
@@ -43,6 +43,11 @@ Site desenvolvido encontra-se hospedado na plataforma vercel: [MKS sistemas - si
 	<td>styled-components</td>
 	<td>https://styled-components.com/</td>
 </tr>
+<tr>
+	<td>sweetalert2</td>
+	<td>https://sweetalert2.github.io/</td>
+</tr>
+sweetalert2
 <tr>
 </table>
 
