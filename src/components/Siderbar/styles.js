@@ -13,7 +13,7 @@ export const Container = styled.div`
   
 
   top: 0px;
-  left: 880px;
+  left: 65.5%;
   width: 486px;
   height: auto;
 
@@ -34,7 +34,7 @@ export const Container = styled.div`
   }
 
   @media ${devices.mobileL} {
-    left: 62px;
+    left: 24%;
     width: 330px;
     height: auto;
   }
