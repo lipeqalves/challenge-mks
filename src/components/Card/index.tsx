@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../Button";
 import {
   CardContainer,
@@ -9,13 +8,21 @@ import {
   Row,
 } from "./styles";
 
+interface CardProps{
+  imgProduct: string
+  nameProduct: string,
+  praceProduct: string,
+  descriptionProduct:string,
+  onClick: () => void,
+}
+
 export const Card = ({
   imgProduct,
   nameProduct,
   praceProduct,
   descriptionProduct,
-  onClick,
-}) => {
+  onClick
+}:CardProps) => {
   return (
     <CardContainer>
       <CardImg src={imgProduct} />

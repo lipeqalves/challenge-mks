@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { Sidebar } from "../Siderbar";
 import { CartContext } from "../../../context/CartContext";
@@ -9,7 +9,11 @@ import {
   ContainerText,
   BtnCarrinho,
 } from "./styles";
+import { IProdutos } from "../../common/types/produtos";
 
+interface IHeader{
+  cart:IProdutos[]
+}
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSiderbar = () => setSidebar(!sidebar);

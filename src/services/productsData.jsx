@@ -8,6 +8,7 @@ export const productsData = () => {
   useEffect(() => {
     api.get("").then((res) => {
       setProducts(res.data.products);
+      console.log(res.data.products)
       setIsLoading(false);
     });
   }, []);
