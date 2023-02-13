@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { CartContext } from "../../../context/CartContext";
+import { IProdutos } from "../../common/types/produtos";
 import {
   CardContainer,
   CardImg,
@@ -14,13 +15,7 @@ import {
   ContainerBtnPrice,
 } from "./styles";
 
-export const CardSidebar = ({
-  imgProduct,
-  nameProduct,
-  priceProduct,
-  id,
-  qtd,
-}) => {
+export const CardSidebar = ({ name, photo,  price, id, qtd }: IProdutos) => {
   const { handleRemoveItem, handleAddItem, handleRemoveOneItem } =
     useContext(CartContext);
 
@@ -34,8 +29,8 @@ export const CardSidebar = ({
         />
       </CardClose>
       <Row>
-        <CardImg src={imgProduct} />
-        <TextProduct>{nameProduct}</TextProduct>
+        <CardImg src={photo} />
+        <TextProduct>{name}</TextProduct>
         <ContainerBtnPrice>
           <BoxBtn>
             <BtnSelecao
@@ -48,13 +43,13 @@ export const CardSidebar = ({
             <BtnText>{qtd}</BtnText>
             <BtnSelecao
               onClick={() => {
-                handleAddItem(imgProduct, nameProduct, priceProduct, id);
+                handleAddItem(name, photo, price, id);
               }}
             >
               <BtnText>+</BtnText>
             </BtnSelecao>
           </BoxBtn>
-          <TextPrice>R${qtd * priceProduct}</TextPrice>
+          <TextPrice>R${qtd * parseInt(price)}</TextPrice>
         </ContainerBtnPrice>
       </Row>
     </CardContainer>

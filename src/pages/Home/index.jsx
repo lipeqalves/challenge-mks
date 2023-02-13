@@ -20,21 +20,21 @@ export const Home = () => {
         {isLoading ? (
           <CardSkeleton cards={12}/>
         ) : (
-          products.map((product, index) => (
+          products.map((product) => (
             <Card
-              key={index}
+              key={product.id}
               imgProduct={product.photo}
               nameProduct={product.name}
               praceProduct={product.price}
               descriptionProduct={product.description}
               onClick={() => {
                 handleAddItem(
-                  product.photo,
                   product.name,
+                  product.photo,
                   product.price,
                   product.id,
-                  Success()
                 );
+                Success()
               }}
             />
           ))

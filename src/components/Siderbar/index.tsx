@@ -10,9 +10,13 @@ import {
 import { AiFillCloseCircle } from "react-icons/ai";
 import { CardSidebar } from "../CardSidebar";
 import { CartContext } from "../../../context/CartContext";
-import React, { useContext } from "react";
+import { useContext } from "react";
 
-export const Sidebar = ({ active }) => {
+interface SidebarProps {
+  active: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Sidebar = ({ active }: SidebarProps) => {
   const { cart, totalPrice } = useContext(CartContext);
 
   const closeSidebar = () => {
@@ -21,7 +25,7 @@ export const Sidebar = ({ active }) => {
 
   return (
     <Container>
-      <ContainerHeader sidebar={active}>
+      <ContainerHeader>
         <TextHeader>Carrinho de compras</TextHeader>
         <CardClose>
           <AiFillCloseCircle onClick={closeSidebar} />
@@ -32,9 +36,9 @@ export const Sidebar = ({ active }) => {
           <CardSidebar
             key={index}
             id={item.id}
-            imgProduct={item.photo}
-            nameProduct={item.name}
-            priceProduct={item.price}
+            name={item.name}
+            photo={item.photo}
+            price={item.price}
             qtd={item.qtd}
           />
         ))}

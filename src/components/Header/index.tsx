@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { Sidebar } from "../Siderbar";
 import { CartContext } from "../../../context/CartContext";
