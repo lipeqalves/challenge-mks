@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { CartContext } from "../../../context/CartContext";
 import { IProdutos } from "../../common/types/produtos";
@@ -15,13 +15,7 @@ import {
   ContainerBtnPrice,
 } from "./styles";
 
-export const CardSidebar = ({
-  photo,
-  name,
-  price,
-  id,
-  qtd,
-}:IProdutos) => {
+export const CardSidebar = ({ name, photo,  price, id, qtd }: IProdutos) => {
   const { handleRemoveItem, handleAddItem, handleRemoveOneItem } =
     useContext(CartContext);
 
@@ -49,13 +43,13 @@ export const CardSidebar = ({
             <BtnText>{qtd}</BtnText>
             <BtnSelecao
               onClick={() => {
-                //handleAddItem(photo, name, price, id);
+                handleAddItem(name, photo, price, id);
               }}
             >
               <BtnText>+</BtnText>
             </BtnSelecao>
           </BoxBtn>
-          <TextPrice>R${qtd * +price}</TextPrice>
+          <TextPrice>R${qtd * parseInt(price)}</TextPrice>
         </ContainerBtnPrice>
       </Row>
     </CardContainer>

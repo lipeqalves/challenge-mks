@@ -29,8 +29,8 @@ export const Home = () => {
               descriptionProduct={product.description}
               onClick={() => {
                 handleAddItem(
-                  product.photo,
                   product.name,
+                  product.photo,
                   product.price,
                   product.id,
                 );
