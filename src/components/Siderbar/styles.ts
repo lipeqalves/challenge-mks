@@ -1,26 +1,14 @@
 import styled from 'styled-components';
 import {devices} from "../../services/size_screen";
 export const Container = styled.div`
-  background-color: #0F52BA;;
+  background-color: #0F52BA;
   position: absolute;
-  
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
-  grid-row-gap: 15px; 
-  align-content:space-between;
-  justify-items:center;
-  
-
-  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
   left: 65.5%;
   width: 486px;
-  height: auto;
-
-  box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
-  right: ${props => props.sidebar ? '0' : '-100%'};
-  animation: showSidebar .2s;
- 
 
   @keyframes showSidebar {
     from {
@@ -49,7 +37,6 @@ export const Content = styled.div`
   grid-template-columns: 1fr;
   grid-row-gap: 10px; 
   
-  
 `;
 
 export const TextHeader = styled.div`
@@ -58,25 +45,28 @@ export const TextHeader = styled.div`
   line-height: 33px;
   text-align: start;
   color: #FFFFFF;
+
  
 `
 
 export const ContainerHeader = styled.div` 
   margin-top:26px;
-  width: 230px; 
+  position: relative;
+  width: 320px; 
   height: 60px;
   display:flex;
+  align-items: center;
   @media ${devices.mobileL} {
-    width: 200px;
+    width: 230px;
   }
 `
 
 export const ContainerText = styled.div` 
   
-  width: 320px; 
+  width: 300px; 
   height: 68px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
  
   @media ${devices.mobileL} {
@@ -88,7 +78,6 @@ export const ContainerText = styled.div`
 
 export const ContainerFooter = styled.div` 
   
- 
   width: 486px; 
   height: 97px;
 
@@ -97,7 +86,6 @@ export const ContainerFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
   font-weight: 700;
   font-size: 28px;
   line-height: 15px;
@@ -110,14 +98,14 @@ export const ContainerFooter = styled.div`
   }
 `
 export const CardClose = styled.p`
-
+position: absolute;
   width: 38px;
   height: 38px;
-
   font-weight: 400;
   font-size: 34px;
   line-height: 17px;
-
   color: #000000;
+  left: 100%;
+  top: 0%;
 
 `;
